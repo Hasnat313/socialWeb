@@ -17,7 +17,7 @@ const Navbar = () => {
 					</Box>
 
 					<SearchBarBox>
-						<InputBase placeholder="search..." />
+						<InputBase sx={{ color: "black" }} placeholder="search..." />
 					</SearchBarBox>
 
 					<Box>

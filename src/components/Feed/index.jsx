@@ -5,7 +5,7 @@ const Feed = () => {
 	return (
 		<>
 			<Box flex={4} p={2}>
-				<Card sx={{ m: 5 }}>
+				<Card sx={{ m: { xs: 1, md: 5 } }}>
 					<CardHeader
 						avatar={
 							<Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
@@ -33,7 +33,7 @@ const Feed = () => {
 						</IconButton>
 					</CardActions>
 				</Card>
-				<Card sx={{ m: 5 }}>
+				<Card sx={{ m: { xs: 1, md: 5 } }}>
 					<CardHeader
 						avatar={
 							<Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
