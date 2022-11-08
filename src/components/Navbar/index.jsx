@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { AppBar, Toolbar, Typography, InputBase, Badge, Avatar, Box, Menu, MenuItem } from "@mui/material";
 import { StyledToolbar, SearchBarBox, NotificationBar, UserBar } from "./StyledToolbarRoot";
-import { Face, Mail, NotificationAdd, Notifications } from "@mui/icons-material";
+import { Face, Mail, MenuOpen, NotificationAdd, Notifications } from "@mui/icons-material";
+import { useUIContext } from "../../context/ui";
 
 const Navbar = () => {
+	const { drawerOpen, setDrawerOpen } = useUIContext();
 	const [open, setOpen] = useState(false);
+
 	return (
 		<>
 			<AppBar sx={{ position: "sticky" }}>
@@ -13,7 +16,12 @@ const Navbar = () => {
 						<Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
 							Raja G
 						</Typography>
-						<Face sx={{ display: { xs: "block", sm: "none" } }} />
+						<MenuOpen
+							sx={{ display: { xs: "block", sm: "none" } }}
+							onClick={() => {
+								setDrawerOpen(true);
+							}}
+						/>
 					</Box>
 
 					<SearchBarBox>
@@ -37,7 +45,14 @@ const Navbar = () => {
 							/>
 						</NotificationBar>
 						<UserBar>
-							<Typography variant="body">Hasnat</Typography>
+							<Typography
+								variant="body"
+								onClick={() => {
+									setDrawerOpen(false);
+								}}
+							>
+								Hasnat
+							</Typography>
 							<Avatar
 								onClick={() => {
 									setOpen(true);
